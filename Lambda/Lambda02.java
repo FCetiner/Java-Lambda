@@ -13,6 +13,15 @@ public class Lambda02 {
 		System.out.println();
 		System.out.println(" *** ");
 		toplaEl1(list);
+		System.out.println();
+		System.out.println(" *** ");
+		carpCiftEl1(list);
+		System.out.println();
+		System.out.println(" *** ");
+		carpCiftEl2(list);
+		System.out.println();
+		System.out.println(" *** ");
+		mini4(list);
 
 	}
 	// List'in çift olan elemanlarýn karelerini aliniz ve en buyugunu yazdýrýnýz
@@ -50,13 +59,42 @@ public class Lambda02 {
 	}
 	//List'teki cift elemanlarin carpimini yazdiriniz.
 	//Method Reference...
-	public static void carpEl1(List<Integer> list) {
-		Optional<Integer> toplam=list.stream().reduce(Integer::sum);
-		Optional<Integer> toplam2=list.stream().reduce(Math::addExact);
-		//t her zaman deðerini atanan deðerden alýr
-		//u her zaman deðerini list.stream()'den alýr(akýþ)
-		//t ilk degerden sonraki degerlerini iþlemden alýr
+	
+	public static void carpCiftEl1(List<Integer> list) {
+	Optional<Integer>carp=list.stream().filter(Lambda01::ciftBul).reduce(Math::multiplyExact);
 		
-		System.out.println(toplam);
+		System.out.println(carp);
 	}
+	
+	//List'teki cift elemanlarin  yazdiriniz.
+	//Lambda expression...
+	
+	public static void carpCiftEl2(List<Integer> list) {
+		Optional<Integer>carp=list.stream().filter(Lambda01::ciftBul).reduce((x,y)->(x*y));
+		//pozitif deðer üretiniz
+			System.out.println(carp);
+		}
+	//List'teki elemanlardan en kucugunu 4 farklý yontem ile yazdiriniz
+	
+	public static void mini1(List<Integer> list) {
+		Optional<Integer>min=list.stream().reduce(Integer::min);
+		System.out.println(min);
+	}
+	public static void mini2(List<Integer> list) {
+		Optional<Integer>min=list.stream().reduce(Math::min);
+		System.out.println(min);
+	}
+	public static int minBul(int x,int y) {
+		return x<y?x:y;
+	}
+	public static void mini3(List<Integer> list) {
+		Optional<Integer>min=list.stream().reduce(Lambda02::minBul);
+		System.out.println(min);
+	}
+	public static void mini4(List<Integer> list) {
+		Optional<Integer>min=list.stream().reduce((x,y)->x<y?x:y);
+		System.out.println(min);
+	}
+	
+	
 }
