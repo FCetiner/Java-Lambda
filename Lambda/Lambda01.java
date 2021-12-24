@@ -75,8 +75,7 @@ public class Lambda01 {
 
 	}
 
-	// Method Reference --> kendi create ettigimiz veya java'dan aldigimiz method
-	// ile
+	// Method Reference --> kendi create ettigimiz veya java'dan aldigimiz method ile
 	// ClassName::MethodName
 
 	public static void printEl(int t) { // refere edilecek method create edildi
