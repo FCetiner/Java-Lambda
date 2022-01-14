@@ -52,6 +52,7 @@ public class Lambda02 {
 	}
 	//Listteki tüm elemanlarýn toplamýný yazdýrýn
 	//Method reference
+	@SuppressWarnings("unused")
 	public static void toplaEl2(List<Integer> list) {
 		Optional<Integer> toplam=list.stream().reduce(Integer::sum);
 		Optional<Integer> toplam2=list.stream().reduce(Math::addExact);
