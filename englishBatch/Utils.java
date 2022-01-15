@@ -25,4 +25,11 @@ public class Utils {
 	public static double getHalf(int x) {
 		return x/2.0;
 	}
+	
+	public static char getLastChar(String str) {
+		return str.charAt(str.length()-1);
+	}
+	public static char getFirstChar(String str) {
+		return str.charAt(0);
+	}
 }
