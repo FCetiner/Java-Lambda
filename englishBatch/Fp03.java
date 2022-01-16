@@ -62,5 +62,18 @@ public class Fp03 {
 			list.removeIf(t-> t.length()>5);
 			System.out.println(list);
 		}
+		//Remove the elements if the length is between 8 and 10 or ending with "0"
+		
+		//streamdan sonra remove methodlari kullanýlamýyor
+//		public static void removeElementIfLengthisBetween8and10orEndingWithO(List<String> list) {
+//			list.removeIf(t-> t.length()>7 && t.length()<11||t.endsWith("o"));
+//			System.out.println(list);
+//		}
+		
+		//create a method to check if the length of all elements are less than 12
+		
+		public static boolean checkToBeLessThanTwelwe(List<String> list) {
+		return	list.stream().allMatch(t-> t.length()<12);
+		}
 	
 }

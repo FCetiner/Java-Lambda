@@ -32,4 +32,13 @@ public class Utils {
 	public static char getFirstChar(String str) {
 		return str.charAt(0);
 	}
+	
+	public static int getSumOfDigits(int x) {
+		int a=0;
+		while (x>0) {
+		a+=(x%10);
+		x/=10;
+		}
+		return a;
+	}
 }
